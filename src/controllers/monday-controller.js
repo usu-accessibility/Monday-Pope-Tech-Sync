@@ -15,12 +15,9 @@ async function executeAction(req, res) {
     const { boardId, itemId, sourceColumnId, targetColumnId } = inputFields;
     console.log("boardId");
     console.log(boardId, itemId, sourceColumnId, targetColumnId,);
-    const mondayData = await mondayService.getColumnValue(shortLivedToken, itemId, sourceColumnId, boardId);
-    console.log("mondayData");
-    console.log(mondayData);
-    if (mondayData) {
+
       axios.post('https://ix67rnfag5.execute-api.us-east-1.amazonaws.com/default/', {
-        update_board:mondayData,
+        update_board:inputFields,
       })
       .then((response) => {
         // console.log(response);
@@ -29,15 +26,6 @@ async function executeAction(req, res) {
       });
 
       return res.status(200).send({});
-    }
-    // const transformedText = transformationService.transformText(
-    //   text,
-    //   transformationType ? transformationType.value : 'TO_UPPER_CASE'
-    // );
-
-    // await mondayService.changeColumnValue(shortLivedToken, boardId, itemId, targetColumnId, transformedText);
-
-    return res.status(200).send({});
   } catch (err) {
     console.error(err);
     return res.status(500).send({ message: 'internal server error' });
@@ -55,9 +43,7 @@ async function executeActionPoptech(req, res) {
     const { boardId, itemId} = inputFields;
     console.log("boardId");
     console.log(boardId, itemId);
-    // const mondayData = await mondayService.getColumnValue(shortLivedToken, itemId, sourceColumnId, boardId);
-    // console.log("mondayData");
-    // console.log(mondayData);
+
       axios.post('https://r6i15ludv6.execute-api.us-east-1.amazonaws.com/prod/run', {
         'event' : {'pulseId' : itemId},
       })
@@ -68,14 +54,6 @@ async function executeActionPoptech(req, res) {
       });
 
       return res.status(200).send({});
-    // const transformedText = transformationService.transformText(
-    //   text,
-    //   transformationType ? transformationType.value : 'TO_UPPER_CASE'
-    // );
-
-    // await mondayService.changeColumnValue(shortLivedToken, boardId, itemId, targetColumnId, transformedText);
-
-    return res.status(200).send({});
   } catch (err) {
     console.error(err);
     return res.status(500).send({ message: 'internal server error' });

@@ -1,5 +1,4 @@
-const path = require('path'); 
-require('dotenv').config({ path: path.join('/home/ec2-user/Monday-Pope-Tech', '.env') });
+require('dotenv').config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
