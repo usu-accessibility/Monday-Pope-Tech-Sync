@@ -21,6 +21,8 @@ This is the "Quickstart Integration" Monday app.
 - **Node.js Backend**: Our Node.js backend serves as the bridge between the AWS Lambda functions, allowing you to connect this application to any 
 - **Monday board with the app installed**.
 - **Dockerized Node.js Backend**: The Node.js backend is containerized and deployed on AWS EC2 instances, managed by NGINX for optimal performance.
+  
+![Projects - Page 1](https://github.com/usu-access/Monday-Pope-Tech-Sync/assets/41461773/78bec580-69a1-4f66-87c1-eac52284aff4)
 
 ## Workflow
 
