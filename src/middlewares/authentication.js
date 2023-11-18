@@ -4,10 +4,10 @@ async function authenticationMiddleware(req, res, next) {
   console.log(process.env.MONDAY_SIGNING_SECRET);
   console.log(process.env);
   try {
-    let { authorization } = req.headers;
-    if (!authorization && req.query) {
-      authorization = req.query.token;
-    }
+    // let { authorization } = req.headers;
+    // if (!authorization && req.query) {
+    // }
+    authorization = process.env.MONDAY_TOKEN;
     const { accountId, userId, backToUrl, shortLivedToken } = jwt.verify(
       authorization,
       process.env.MONDAY_SIGNING_SECRET
