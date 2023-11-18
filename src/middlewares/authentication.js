@@ -7,7 +7,7 @@ async function authenticationMiddleware(req, res, next) {
     // let { authorization } = req.headers;
     // if (!authorization && req.query) {
     // }
-    authorization = process.env.MONDAY_TOKEN;
+    authorization = process.env.MONDAY_API_KEY;
     const { accountId, userId, backToUrl, shortLivedToken } = jwt.verify(
       authorization,
       process.env.MONDAY_SIGNING_SECRET
