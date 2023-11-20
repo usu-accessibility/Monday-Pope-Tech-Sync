@@ -15,7 +15,7 @@ router.get('/health', function (req, res) {
 function getHealth() {
   return {
     ok: true,
-    message: 'Healthy',
+    message: 'Down',
   };
 }
 
