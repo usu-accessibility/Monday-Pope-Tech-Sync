@@ -44,7 +44,7 @@ async function executeActionPoptech(req, res) {
     console.log("boardId");
     console.log(boardId, itemId);
 
-      axios.post('https://r6i15ludv6.execute-api.us-east-1.amazonaws.com/prod/run', {
+      axios.post('https://xxb6hqyh6j.execute-api.us-east-1.amazonaws.com/default/WebsiteMonday', {
         'event' : {'pulseId' : itemId},
       })
       .then((response) => {
