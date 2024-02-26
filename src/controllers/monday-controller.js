@@ -16,7 +16,7 @@ async function executeAction(req, res) {
     console.log("boardId");
     console.log(boardId, itemId, sourceColumnId, targetColumnId,);
 
-      axios.post('https://ix67rnfag5.execute-api.us-east-1.amazonaws.com/default/', {
+      axios.post('http://applications.accessapps.link:3012/main', {
         update_board:inputFields,
       })
       .then((response) => {
@@ -44,7 +44,7 @@ async function executeActionPoptech(req, res) {
     console.log("boardId");
     console.log(boardId, itemId);
 
-      axios.post('https://xxb6hqyh6j.execute-api.us-east-1.amazonaws.com/default/WebsiteMonday', {
+      axios.post('http://applications.accessapps.link:3014/main', {
         'event' : {'pulseId' : itemId},
       })
       .then((response) => {
