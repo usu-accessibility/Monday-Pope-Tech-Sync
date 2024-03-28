@@ -18,14 +18,14 @@ async function executeAction(req, res) {
     console.log("boardId");
     console.log(boardId, itemId, sourceColumnId, targetColumnId);
 
-      axios.post('http://applications.accessapps.link:3012/main', {
+    await axios.post('http://applications.accessapps.link:3012/main', {
         update_board:inputFields,
-      })
-      .then((response) => {
-        // console.log(response);
-      }, (error) => {
-        // console.log(error);
-      });
+    })
+      // .then((response) => {
+      //   // console.log(response);
+      // }, (error) => {
+      //   // console.log(error);
+      // });
 
       return res.status(200).send({});
   } catch (err) {
