@@ -18,7 +18,7 @@ async function executeAction(req, res) {
     console.log("boardId");
     console.log(boardId, itemId, sourceColumnId, targetColumnId);
 
-    await axios.post('http://applications.accessapps.link:3012/main', {
+    await axios.post('https://monday-url-status.accessapps.link/main', {
         update_board:inputFields,
     })
       // .then((response) => {
@@ -46,7 +46,7 @@ async function executeActionPoptech(req, res) {
     console.log("boardId");
     console.log(boardId, itemId);
 
-      axios.post('http://applications.accessapps.link:3014/main', {
+      axios.post('https://monday-popetech.accessapps.link/main', {
         'event' : {'pulseId' : itemId},
       })
       .then((response) => {
@@ -156,7 +156,7 @@ async function executeAllActionPoptech(req, res) {
     for (let idx = index; idx < end_index; idx++) {
       console.log(all_items[idx]['id'])
       try {
-        await axios.post('http://applications.accessapps.link:3014/main', {'event' : {'pulseId' : all_items[idx]['id']}})
+        await axios.post('https://monday-popetech.accessapps.link/main', {'event' : {'pulseId' : all_items[idx]['id']}})
       }
       catch(err){
         console.log(err);
